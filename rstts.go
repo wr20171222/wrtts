@@ -11,7 +11,7 @@ import (
 type Config struct {
 	Speaker string
 	Speak   string
-	ip      string
+	Ip      string
 }
 
 // 파일 형식 지정
@@ -24,7 +24,7 @@ var baseCmd = "/usr/vt/rest/vtspeech"
 func Speak(t Config) (*Speech, error) {
 
 	// REST Command 실행
-	args := []string{"--voice", t.Speaker, "--text", t.Speak, "--ip", t.ip, "--lang", "Korean", "--aformat", "mp3", "--srate", "48000"}
+	args := []string{"--voice", t.Speaker, "--text", t.Speak, "--ip", t.Ip, "--lang", "Korean", "--aformat", "mp3", "--srate", "48000"}
 	cmd := exec.Command(baseCmd, args...)
 
 	output, _ := cmd.CombinedOutput()
