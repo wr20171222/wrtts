@@ -11,6 +11,7 @@ import (
 type Config struct {
 	Speaker string
 	Speak   string
+	ip      string
 }
 
 // 파일 형식 지정
